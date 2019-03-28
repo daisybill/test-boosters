@@ -18,6 +18,7 @@ module TestBoosters
 
       def after_job
         TestBoosters::InsightsUploader.upload("rspec", report_path)
+        run_heroku_teardown_hook
       end
 
       def command
@@ -44,6 +45,9 @@ module TestBoosters
         @formatter_path ||= File.join(::TestBoosters::ROOT_PATH, "rspec_formatters/semaphore_rspec3_json_formatter.rb")
       end
 
+      def run_heroku_teardown_hook
+        `#{JSON.parse(File.read("#{ENV["HOME"]}/app.json"))["environments"]["test"]["scripts"]["custom-test-teardown"]}`
+      end
     end
   end
 end
