@@ -16,7 +16,6 @@ Test Booster basics:
 Test Boosters:
 
   - [RSpec Booster](#rspec-booster)
-  - [Cucumber Booster](#cucumber-booster)
   - [Minitest Booster](#minitest-booster)
   - [ExUnit Booster](#ex-unit-booster)
   - [GoTest Booster](#go-test-booster)
@@ -132,24 +131,6 @@ TB_RSPEC_OPTIONS='--fail-fast=3' TB_RSPEC_FORMATTER=Fivemat rspec_booster --job 
 
 # will execute:
 bundle exec rspec --fail-fast=3 --format Fivemat --format json --out /home/<user>/rspec_report.json <file_list>
-```
-
-## Cucumber Booster
-
-The `cucumber_booster` loads all the files that match the `features/**/*.feature`
-pattern and uses the `~/cucumber_split_configuration.json` file to parallelize
-your test suite.
-
-Example of running job 4 out of 32 jobs:
-
-``` bash
-cucumber_booster --job 4/32
-```
-
-Under the hood, the Cucumber Booster uses the following command:
-
-``` bash
-bundle exec cucumber <file_list>
 ```
 
 ## Minitest Booster

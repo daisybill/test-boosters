@@ -20,13 +20,5 @@ module TestBoosters
 
       puts "RSpec Version: #{version}"
     end
-
-    def display_cucumber_version
-      command = "(bundle list | grep -q '* cucumber') && (bundle exec cucumber --version | head -1) || echo 'not found'"
-      version = TestBoosters::Shell.evaluate(command)
-
-      puts "Cucumber Version: #{version}"
-    end
-
   end
 end

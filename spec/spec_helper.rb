@@ -7,7 +7,6 @@ require "securerandom"
 
 require_relative "support/coverage"
 require_relative "support/rspec_files_factory"
-require_relative "support/cucumber_files_factory"
 require_relative "support/split_configuration_factory"
 
 RSpec.configure do |config|

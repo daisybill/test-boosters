@@ -19,11 +19,4 @@ describe TestBoosters::ProjectInfo do
       expect { described_class.display_rspec_version }.to output(/RSpec Version: .*3/).to_stdout
     end
   end
-
-  describe ".display_cucumber_version" do
-    it "displays cucumber version" do
-      expect { described_class.display_cucumber_version }.to output(/Cucumber Version: not found/).to_stdout
-    end
-  end
-
 end
